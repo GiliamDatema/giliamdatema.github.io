@@ -18,6 +18,13 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('@/views/AboutView.vue')
+    },
+    { // catch-all fallback route for 404 error, redirecting to home page
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      redirect: '/'
+      // alternatively, use a custom 404 error page
+      // component: () => import('@/views/NotFoundView.vue')
     }
   ]
 })

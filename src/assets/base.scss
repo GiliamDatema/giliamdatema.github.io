@@ -1,10 +1,10 @@
 :root {
-  --color-text: rgb(0 0 0 / 0);
-  --color-background: rgb(255 255 255 / 0);
+  --color-text: black;
+  --color-background: white;
 
   @media (prefers-color-scheme: dark) {
-    --color-text: rgb(255 255 255 / 0);
-    --color-background: rgb(0 0 0 / 0);
+    --color-text: white;
+    --color-background: black;
   }
 
   font-size: 62.5%;
