@@ -15,7 +15,24 @@
         </template>
         <template #end>
           <div class="flex align-items-center gap-2">
-            <InputText placeholder="Search" type="text" class="w-8rem sm:w-auto" />
+            <InputText
+              v-tooltip.focus.bottom="'Find a recipe by name, ingredients / keywords'"
+              placeholder="Search"
+              type="text"
+              class="w-8rem sm:w-auto"
+            />
+            <ToggleButton
+              v-model="darkMode"
+              onIcon="pi pi-moon text-700"
+              offIcon="pi pi-sun text-700"
+              onLabel=""
+              offLabel=""
+              class="flex flex-shrink-0 border-1 border-solid w-2rem h-2rem
+                surface-border border-round hover:border-primary surface-100
+                align-items-center justify-content-center transition-all
+                transition-duration-300"
+              :class="$style['color-scheme-toggle']"
+            />
           </div>
         </template>
       </Menubar>
@@ -31,12 +48,12 @@
 // The `setup` attribute allows using Composition API inside SFCs.
 // The code inside is compiled as the content of the component's setup() function,
 // which will execute every time an instance of the component is created.
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { usePrimeVue } from 'primevue/config'
 import Menubar from 'primevue/menubar'
 import InputText from 'primevue/inputtext'
-import router from '@/router'
+import ToggleButton from 'primevue/togglebutton'
 
 const PrimeVue = usePrimeVue()
 
@@ -60,22 +77,20 @@ const colorSchemeQuery = window.matchMedia?.('(prefers-color-scheme: dark)')
 colorSchemeQuery.addEventListener('change', updateColorScheme)
 updateColorScheme()
 
+const toggleColorScheme = (isDark) => setColorScheme(isDark ? 'dark' : 'light')
+const darkMode = ref(getPreferredColorScheme() === 'dark' ? true : false)
+watch(darkMode, (isDark) => toggleColorScheme(isDark))
+
 const items = ref([
   {
     label: 'Recipes',
     icon: 'pi pi-book',
     route: { name: 'home' }
-    // command: () => {
-    //   router.push({ name: 'home' })
-    // }
   },
   {
     label: 'Favourites',
     icon: 'pi pi-bookmark',
     route: { name: 'bookmarks' }
-    // command: () => {
-    //   router.push({ name: 'about' })
-    // }
   }
 ])
 </script>
@@ -88,5 +103,8 @@ const items = ref([
   position: relative;
   bottom: -.4rem;
   margin: 0 1rem;
+}
+.color-scheme-toggle {
+  box-shadow: none;
 }
 </style>
