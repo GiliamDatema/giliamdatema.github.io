@@ -1,9 +1,17 @@
 @import './base.scss';
 @import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css';
+
+@font-face {
+  font-family: 'BadScript';
+  font-style: normal;
+  src: local('BadScript-Regular'), url(@/assets/fonts/Bad_Script/BadScript-Regular.ttf) format('truetype');
+}
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
+  max-width: 80vw;
+  min-height: 100vh;
   padding: 2rem;
   font-weight: normal;
 }
