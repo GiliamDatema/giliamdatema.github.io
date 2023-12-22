@@ -1,42 +1,6 @@
 <template>
   <header>
-    <nav>
-      <Menubar :model="items" class="flex gap-5 mb-5">
-        <template #start>
-          <span v-text="`Giliam's Recipes`" :class="$style.title" />
-        </template>
-        <template #item="{ item, props }">
-          <RouterLink v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-            <a :href="href" v-bind="props.action" @click="navigate">
-              <span v-if="item.icon" :class="item.icon" />
-              <span :class="{ 'ml-2': item.icon }">{{ item.label }}</span>
-            </a>
-          </RouterLink>
-        </template>
-        <template #end>
-          <div class="flex align-items-center gap-2">
-            <InputText
-              v-tooltip.focus.bottom="'Find a recipe by name, ingredients / keywords'"
-              placeholder="Search"
-              type="text"
-              class="w-8rem sm:w-auto"
-            />
-            <ToggleButton
-              v-model="darkMode"
-              onIcon="pi pi-moon text-700"
-              offIcon="pi pi-sun text-700"
-              onLabel=""
-              offLabel=""
-              class="flex flex-shrink-0 border-1 border-solid w-2rem h-2rem
-                surface-border border-round hover:border-primary surface-100
-                align-items-center justify-content-center transition-all
-                transition-duration-300"
-              :class="$style['color-scheme-toggle']"
-            />
-          </div>
-        </template>
-      </Menubar>
-    </nav>
+    <NavBar />
   </header>
 
   <main>
@@ -48,63 +12,10 @@
 // The `setup` attribute allows using Composition API inside SFCs.
 // The code inside is compiled as the content of the component's setup() function,
 // which will execute every time an instance of the component is created.
-import { ref, watch } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
-import { usePrimeVue } from 'primevue/config'
-import Menubar from 'primevue/menubar'
-import InputText from 'primevue/inputtext'
-import ToggleButton from 'primevue/togglebutton'
-
-const PrimeVue = usePrimeVue()
-
-const getPreferredColorScheme = () => {
-  return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches ? 'dark' : 'light'
-}
-const setColorScheme = (scheme) => {
-  switch (scheme) {
-    case 'dark':
-      PrimeVue.changeTheme('lara-light-green', 'lara-dark-green', 'theme-link', () => {})
-      break;
-    case 'light':
-      PrimeVue.changeTheme('lara-dark-green', 'lara-light-green', 'theme-link', () => {})
-      break;
-    default:
-      break;
-  }
-}
-const updateColorScheme = () => setColorScheme(getPreferredColorScheme())
-const colorSchemeQuery = window.matchMedia?.('(prefers-color-scheme: dark)')
-colorSchemeQuery.addEventListener('change', updateColorScheme)
-updateColorScheme()
-
-const toggleColorScheme = (isDark) => setColorScheme(isDark ? 'dark' : 'light')
-const darkMode = ref(getPreferredColorScheme() === 'dark' ? true : false)
-watch(darkMode, (isDark) => toggleColorScheme(isDark))
-
-const items = ref([
-  {
-    label: 'Recipes',
-    icon: 'pi pi-book',
-    route: { name: 'home' }
-  },
-  {
-    label: 'Favourites',
-    icon: 'pi pi-bookmark',
-    route: { name: 'bookmarks' }
-  }
-])
+import { RouterView } from 'vue-router'
+import NavBar from '@/components/NavBar.vue'
 </script>
 
 <style lang="scss" module>
-.title {
-  font-family: 'BadScript';
-  font-size: 4.6rem;
-  line-height: 1rem;
-  position: relative;
-  bottom: -.4rem;
-  margin: 0 1rem;
-}
-.color-scheme-toggle {
-  box-shadow: none;
-}
+
 </style>
