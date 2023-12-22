@@ -12,12 +12,12 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/bookmarks',
+      name: 'bookmarks',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/AboutView.vue')
+      component: () => import('@/views/BookmarksView.vue')
     },
     { // catch-all fallback route for 404 error, redirecting to home page
       path: '/:pathMatch(.*)*',
