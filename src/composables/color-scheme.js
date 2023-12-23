@@ -1,7 +1,6 @@
 import { ref, watch } from 'vue'
 
-export function useColorScheme(PrimeVue) {
-
+export function useColorScheme (PrimeVue) {
   const getPreferredColorScheme = () => {
     return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches ? 'dark' : 'light'
   }
@@ -9,12 +8,12 @@ export function useColorScheme(PrimeVue) {
     switch (scheme) {
       case 'dark':
         PrimeVue.changeTheme('lara-light-green', 'lara-dark-green', 'theme-link', () => {})
-        break;
+        break
       case 'light':
         PrimeVue.changeTheme('lara-dark-green', 'lara-light-green', 'theme-link', () => {})
-        break;
+        break
       default:
-        break;
+        break
     }
   }
   const updateColorScheme = () => setColorScheme(getPreferredColorScheme())
@@ -23,7 +22,7 @@ export function useColorScheme(PrimeVue) {
   updateColorScheme()
 
   const toggleColorScheme = (isDark) => setColorScheme(isDark ? 'dark' : 'light')
-  const darkMode = ref(getPreferredColorScheme() === 'dark' ? true : false)
+  const darkMode = ref(getPreferredColorScheme() === 'dark')
   watch(darkMode, (isDark) => toggleColorScheme(isDark))
 
   return darkMode
