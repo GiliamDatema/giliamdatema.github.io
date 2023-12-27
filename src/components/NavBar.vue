@@ -66,12 +66,12 @@ const items = ref([
 
 <style lang="scss" module>
 .title {
-  font-family: 'BadScript';
+  bottom: -.4rem;
+  font-family: BadScript, sans-serif;
   font-size: 4.6rem;
   line-height: 1rem;
-  position: relative;
-  bottom: -.4rem;
   margin: 0 1rem;
+  position: relative;
 }
 .color-scheme-toggle {
   box-shadow: none;

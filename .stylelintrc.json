@@ -3,14 +3,8 @@
   "fix": true,
   "plugins": ["stylelint-order"],
   "rules": {
-    "declaration-block-trailing-semicolon": "always",
-    "function-comma-space-after": "always",
-    "function-comma-space-before": "never",
-    "indentation": 2,
     "length-zero-no-unit": true,
-    "max-empty-lines": 1,
     "order/order": ["custom-properties", "declarations"],
-    "order/properties-alphabetical-order": true,
-    "string-quotes": "single"
+    "order/properties-alphabetical-order": true
   }
 }
