@@ -2,7 +2,6 @@
 .vscode
 .config
 .DS_Store
-.prettierrc
 
 # Logs
 logs
@@ -19,3 +18,8 @@ node_modules/
 .npmrc
 .nvmrc
 *.local
+
+# Lint & format
+.eslintcache
+.stylelintcache
+.prettierrc

@@ -1,5 +1,6 @@
 { 
-  "extends": ["stylelint-config-standard, stylelint-config-standard-scss"],
+  "extends": ["stylelint-config-recommended-vue"],
+  "fix": true,
   "plugins": ["stylelint-order"],
   "rules": {
     "declaration-block-trailing-semicolon": "always",
