@@ -11,7 +11,11 @@ export default defineConfig(({ command, mode }) => {
   // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
   // process.cwd() = current working directory = project root where index.html is located
   const env = loadEnv(mode, process.cwd())
-  console.log(`NODE_ENV = ${JSON.stringify(process.env.NODE_ENV)}`)
+  const NODE_ENV = process.env.NODE_ENV
+  // For GH Pages the BASE_URL is /recipes, set in deploy.yml workflow
+  const BASE_URL = process.env.BASE_URL ?? '/'
+  console.log(`NODE_ENV = ${JSON.stringify(NODE_ENV)}`)
+  console.log(`BASE_URL = ${JSON.stringify(BASE_URL)}`)
   console.log(`.env ${JSON.stringify(env, null, 2)}`)
   return {
     // vite config
@@ -20,7 +24,7 @@ export default defineConfig(({ command, mode }) => {
       __APP_TITLE__: JSON.stringify(env.VITE_APP_TITLE),
       __APP_VERSION__: JSON.stringify(env.VITE_APP_VERSION)
     },
-    base: process.env.NODE_ENV === 'production' ? '/recipes/' : '/',
+    base: BASE_URL,
     plugins: [
       vue(),
       eslint({
