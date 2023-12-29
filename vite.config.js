@@ -12,7 +12,7 @@ export default defineConfig(({ command, mode }) => {
   // process.cwd() = current working directory = project root where index.html is located
   const env = loadEnv(mode, process.cwd())
   const NODE_ENV = process.env.NODE_ENV
-  // For GH Pages the BASE_URL is /recipes, set in deploy.yml workflow
+  // For GH Pages the base URL is /recipes, set in gh-pages-deploy.yml workflow
   const BASE_URL = process.env.BASE_URL ?? '/'
   console.log(`NODE_ENV = ${JSON.stringify(NODE_ENV)}`)
   console.log(`BASE_URL = ${JSON.stringify(BASE_URL)}`)
