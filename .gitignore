@@ -23,3 +23,6 @@ node_modules/
 .eslintcache
 .stylelintcache
 .prettierrc
+
+# Temporary
+firebase_index.html
