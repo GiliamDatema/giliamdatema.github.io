@@ -1,6 +1,6 @@
 # Giliam's Recipes
 
-This single-page application is built with:
+This single-page web application is built with:
 - [Vite](https://vitejs.dev)
 - [Vue 3](https://vuejs.org)
 - [VueFire](https://vuefire.vuejs.org)
@@ -10,10 +10,10 @@ This single-page application is built with:
 
 ## Domains
 
-The app is hosted on [GitHub Pages](https://pages.github.com) and [Firebase](https://firebase.google.com).
+The app is hosted on:
 
-GitHub Pages: [giliamdatema.github.io/recipes](https://giliamdatema.github.io/recipes)
-Firebase: [giliam.web.app](https://giliam.web.app) & [giliam.firebaseapp.com](https://giliam.firebaseapp.com)
+- [GitHub Pages](https://pages.github.com): [giliamdatema.github.io/recipes](https://giliamdatema.github.io/recipes)
+- [Firebase](https://firebase.google.com): [giliam.web.app](https://giliam.web.app) and [giliam.firebaseapp.com](https://giliam.firebaseapp.com)
 
 ## Deploy & Preview
 
