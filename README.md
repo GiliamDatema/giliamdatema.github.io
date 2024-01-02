@@ -3,17 +3,19 @@
 This single-page web application is built with:
 - [Vite](https://vitejs.dev)
 - [Vue 3](https://vuejs.org)
-- [VueFire](https://vuefire.vuejs.org)
+- [Firebase](https://firebase.google.com) (with [VueFire](https://vuefire.vuejs.org))
 - [Pinia](https://pinia.vuejs.org)
-- [PrimeVue](https://primevue.org)
-- [PrimeFlex](https://primeflex.org)
+- [PrimeVue](https://primevue.org) + [PrimeFlex](https://primeflex.org)
 
 ## Domains
 
 The app is hosted on:
 
-- [GitHub Pages](https://pages.github.com): [giliamdatema.github.io/recipes](https://giliamdatema.github.io/recipes)
-- [Firebase](https://firebase.google.com): [giliam.web.app](https://giliam.web.app) and [giliam.firebaseapp.com](https://giliam.firebaseapp.com)
+- [GitHub Pages](https://pages.github.com):
+  - [giliamdatema.github.io/recipes](https://giliamdatema.github.io/recipes)
+- [Firebase](https://firebase.google.com):
+  - [giliam.web.app](https://giliam.web.app)
+  - [giliam.firebaseapp.com](https://giliam.firebaseapp.com)
 
 ## Deploy & Preview
 
