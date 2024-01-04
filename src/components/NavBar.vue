@@ -41,9 +41,6 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import Menubar from 'primevue/menubar'
-import InputText from 'primevue/inputtext'
-import ToggleButton from 'primevue/togglebutton'
 import { useColorScheme } from '@/composables/color-scheme.js'
 import { usePrimeVue } from 'primevue/config'
 

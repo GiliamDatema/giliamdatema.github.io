@@ -1,22 +1,14 @@
-// Import the functions you need from the SDKs you need
+// Import the functions needed from the respective SDKs (using modular API)
 import { initializeApp } from 'firebase/app'
 // import { getAnalytics } from 'firebase/analytics'
-// TODO: Add SDKs for Firebase products that you want to use
+// TODO: Add required SDKs for Firebase services used by the app
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: 'AIzaSyDKlcNcFqpf2Wn8fBG2vQy3d3I8G0peCns',
-  authDomain: 'giliam.firebaseapp.com',
-  databaseURL: 'https://giliam-default-rtdb.europe-west1.firebasedatabase.app',
-  projectId: 'giliam',
-  storageBucket: 'giliam.appspot.com',
-  messagingSenderId: '101997620398',
-  appId: '1:101997620398:web:95daaa44927913f92d913f',
-  measurementId: 'G-2SG30381T7'
+// Initialize Firebase using SDK auto-configuration
+// The config can be found in Firebase console project settings
+async function initFirebase () {
+  const response = await fetch('/__/firebase/init.json')
+  return initializeApp(await response.json())
 }
-
-// Initialize Firebase
-export const firebaseApp = initializeApp(firebaseConfig)
-// const analytics = getAnalytics(firebaseApp)
+export const firebaseApp = initFirebase()
+// export const analytics = getAnalytics(firebaseApp)
