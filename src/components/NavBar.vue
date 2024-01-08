@@ -2,7 +2,7 @@
   <nav>
     <Menubar :model="items" class="flex gap-5 mb-5">
       <template #start>
-        <span v-text="`Giliam's Recipes`" :class="$style.title" />
+        <span v-text="`Giliam Datema`" :class="$style.title" />
       </template>
       <template #item="{ item, props }">
         <RouterLink v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
@@ -49,14 +49,19 @@ const darkMode = useColorScheme(PrimeVue)
 
 const items = ref([
   {
+    label: 'Home',
+    icon: 'pi pi-home',
+    route: { name: 'home' }
+  },
+  {
     label: 'Recipes',
     icon: 'pi pi-book',
-    route: { name: 'home' }
+    route: { name: 'recipes' }
   },
   {
     label: 'Favourites',
     icon: 'pi pi-bookmark',
-    route: { name: 'bookmarks' }
+    route: { name: 'favourites' }
   }
 ])
 </script>

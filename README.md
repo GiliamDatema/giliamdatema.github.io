@@ -1,4 +1,4 @@
-# Giliam's Recipes
+# Giliam's personal website
 
 This single-page web application is built with:
 - [Vite](https://vitejs.dev)
@@ -12,7 +12,7 @@ This single-page web application is built with:
 The app is hosted on:
 
 - [GitHub Pages](https://pages.github.com):
-  - [giliamdatema.github.io/recipes](https://giliamdatema.github.io/recipes)
+  - [giliamdatema.github.io](https://giliamdatema.github.io)
 - [Firebase](https://firebase.google.com):
   - [giliam.web.app](https://giliam.web.app)
   - [giliam.firebaseapp.com](https://giliam.firebaseapp.com)
