@@ -20,6 +20,10 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
+# Get Firebase config from giliam.web.app when deploying to GitHub Pages
+env:
+  FIREBASE_CONFIG_URL: 'https://giliam.web.app/__/firebase/init.json'
+
 jobs:
   # Single deploy job
   deploy:

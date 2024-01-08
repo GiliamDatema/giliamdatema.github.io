@@ -7,7 +7,9 @@ import { initializeApp } from 'firebase/app'
 // Initialize Firebase using SDK auto-configuration
 // The config can be found in Firebase console project settings
 async function initFirebase () {
-  const response = await fetch('/__/firebase/init.json')
+  // When deploying to GitHub Pages get config from giliam.web.app (see workflow)
+  const CONFIG_URL = process.env.FIREBASE_CONFIG_URL ?? '/__/firebase/init.json'
+  const response = await fetch(CONFIG_URL)
   return initializeApp(await response.json())
 }
 export const firebaseApp = initFirebase()
