@@ -17,9 +17,11 @@ export default defineConfig(({ command, mode }) => {
   return {
     // vite config
     define: {
-      __APP_ENV__: JSON.stringify(env.VITE_APP_ENV),
-      __APP_TITLE__: JSON.stringify(env.VITE_APP_TITLE),
-      __APP_VERSION__: JSON.stringify(env.VITE_APP_VERSION)
+      APP_ENV: JSON.stringify(env.VITE_APP_ENV),
+      APP_TITLE: JSON.stringify(env.VITE_APP_TITLE),
+      APP_VERSION: JSON.stringify(env.VITE_APP_VERSION),
+      // When deploying to GitHub Pages get config from giliam.web.app (see GH workflow)
+      FIREBASE_CONFIG_URL: JSON.stringify(process.env.FIREBASE_CONFIG_URL ?? '/__/firebase/init.json')
     },
     plugins: [
       vue(),
