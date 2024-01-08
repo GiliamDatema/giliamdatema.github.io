@@ -20,10 +20,6 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-# Sets base URL to /recipes when deploying to GitHub Pages
-env:
-  BASE_URL: '/recipes'
-
 jobs:
   # Single deploy job
   deploy:
