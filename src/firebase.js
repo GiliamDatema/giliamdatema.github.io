@@ -8,7 +8,11 @@ import { initializeApp } from 'firebase/app'
 // The config can be found in Firebase console project settings
 async function initFirebase () {
   /* eslint-disable no-undef */
-  const response = await fetch(FIREBASE_CONFIG_URL) // defined in vite.config.js
+  if (FIREBASE_CONFIG) { // For GH Pages, config stored in GitHub repo secrets
+    return initializeApp(FIREBASE_CONFIG)
+  }
+  // Firebase SDK auto-configuration
+  const response = await fetch('/__/firebase/init.json')
   return initializeApp(await response.json())
 }
 export const firebaseApp = initFirebase()
