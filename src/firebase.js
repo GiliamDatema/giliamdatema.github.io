@@ -9,6 +9,7 @@ import { initializeApp } from 'firebase/app'
 async function initFirebase () {
   // When deploying to GitHub Pages get config from giliam.web.app (see workflow)
   const CONFIG_URL = process.env.FIREBASE_CONFIG_URL ?? '/__/firebase/init.json'
+  console.log(`Config URL: ${CONFIG_URL}`)
   const response = await fetch(CONFIG_URL)
   return initializeApp(await response.json())
 }
